@@ -1,425 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zakład Blacharsko-Dekarski Maciej Bagrowski - Pokrycia dachowe i dekarstwo - Wągrowiec</title>
-<meta name="description" content="Zakład Blacharsko-Dekarski Maciej Bagrowski - dekarstwo i pokrycia dachowe: blachodachówka, dachówka, więźba, rynny i remonty dachów. Bezpłatny pomiar i wycena. Zobacz nasze realizacje." />
+<meta name="description" content="Zakład Blacharsko-Dekarski Maciej Bagrowski - dekarstwo i pokrycia dachowe: blachodachówka, dachówka, więźba, rynny i remonty dachów. Bezpłatny pomiar i wycena. Zobacz nasze realizacje.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* === PALETA === */
-  :root{ --cream:#F4F6F8; --cream-2:#E7EBEF; --espresso:#15212E; --espresso-2:#243443; --gold:#E8A317; --gold-d:#C9870C; --rose:#FBEFD6; --muted:#6B7785; --white:#FFFFFF; --shadow:0 18px 50px -22px rgba(21,33,46,.5); }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Hanken Grotesk',sans-serif;color:var(--espresso);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,.serif{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-weight:600;line-height:1.15}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s;cursor:pointer;border:1px solid transparent}
-  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;box-shadow:0 10px 24px -10px rgba(169,118,63,.7)}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(169,118,63,.8)}
-  .btn-dark{background:var(--espresso);color:#fff}
-  .btn-dark:hover{background:var(--espresso-2)}
-  header{position:sticky;top:0;z-index:50;background:rgba(250,245,239,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(192,145,95,.18)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.5px}
-  .logo span{color:var(--gold-d)}
-  .nav-links{display:flex;align-items:center;gap:2rem}
-  .nav-links a{font-size:.92rem;color:var(--espresso-2);transition:.2s}
-  .nav-links a:hover{color:var(--gold-d)}
-  .nav-links .btn{padding:.6rem 1.2rem}
-  .burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--espresso)}
-  .eyebrow{display:inline-block;letter-spacing:3px;font-size:.74rem;font-weight:600;color:var(--gold-d);text-transform:uppercase;margin-bottom:18px}
-  section{padding:90px 0}
-  .head{text-align:center;max-width:42rem;margin:0 auto 54px}
-  .head .eyebrow{margin-bottom:12px}
-  .head h2{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.012em}
-  .head p{color:var(--muted);margin-top:14px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .strip{background:var(--espresso);color:#f3e7db}
-  .strip .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;padding:20px 24px;font-size:.92rem}
-  .strip span{display:inline-flex;align-items:center;gap:.55rem}
-  .strip b{color:var(--gold)}
-  .price-note{margin-top:34px;color:var(--muted);font-size:.92rem}
-
-  /* === EDITORIAL: HERO pełnoekranowe, nagłówek na zdjęciu, lead pod spodem === */
-  .ed-hero-img{height:64vh;min-height:440px;position:relative;display:flex;align-items:flex-end;
-      background:url('img/hero.jpg') center 44%/cover no-repeat,linear-gradient(150deg,#efd9c6,#c0915f)}
-  .ed-hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.05) 35%,rgba(20,16,12,.55))}
-  .ed-hero-cap{position:relative;z-index:2;color:#fff;padding-bottom:6vh}
-  .ed-hero-cap .eyebrow{color:#fff;opacity:.92}
-  .ed-hero-cap h1{font-size:clamp(2.6rem,6.6vw,5.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.02;max-width:17ch;text-shadow:0 6px 34px rgba(0,0,0,.45)}
-  .ed-hero-cap h1 em{font-style:italic;color:var(--rose)}
-  .ed-hero-lead{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding:46px 0 8px}
-  .ed-hero-lead p{font-size:1.18rem;color:var(--espresso-2);max-width:44ch;line-height:1.6}
-  .ed-hero-lead .hero-cta{justify-content:flex-end}
-
-  /* === EDITORIAL: OFERTA jako numerowana lista (nie 3 karty) === */
-  .ed-offer{border-top:1px solid color-mix(in srgb,var(--espresso) 14%,transparent)}
-  .ed-offer .erow{display:grid;grid-template-columns:auto 1.1fr 1.9fr;gap:34px;align-items:baseline;
-      padding:32px 0;border-bottom:1px solid color-mix(in srgb,var(--espresso) 14%,transparent);transition:padding .25s ease}
-  .ed-offer .erow:hover{padding-left:12px}
-  .ed-offer .num{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--gold-d);line-height:.9}
-  .ed-offer .ttl{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-size:1.4rem;font-weight:600}
-  .ed-offer .desc{color:var(--muted);font-size:1rem;line-height:1.6;max-width:54ch}
-
-  /* === EDITORIAL: band-manifest z cytatem === */
-  .ed-quote{background:var(--espresso);color:#fff;text-align:center}
-  .ed-quote .wrap{max-width:60rem}
-  .ed-quote blockquote{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-style:italic;font-size:clamp(1.55rem,3.5vw,2.5rem);line-height:1.32}
-  .ed-quote blockquote span{color:var(--gold)}
-
-  /* === EDITORIAL: O nas - split, zdjęcie po prawej === */
-  .about{background:linear-gradient(180deg,var(--cream),#f5ebe1)}
-  .ed-about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-  .ed-about-txt h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:18px}
-  .ed-about-txt p{color:var(--espresso-2);margin-bottom:16px;max-width:60ch}
-  .ed-about-img{height:460px;border-radius:16px;box-shadow:var(--shadow);
-      background:url('img/about.jpg') center/cover no-repeat,linear-gradient(140deg,#3a2c25,#5a463c)}
-
-  /* === EDITORIAL: galeria bento (asymetryczna) === */
-  .ed-gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:198px;gap:14px}
-  .tile{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px;color:#fff;font-weight:600;border-radius:12px;
-      box-shadow:0 12px 30px -16px rgba(58,44,37,.5);background-color:#c9a88f;background-size:cover;background-position:center;transition:.3s}
-  .tile:hover{transform:translateY(-4px)}
-  .tile span{position:relative;z-index:2;font-size:1rem;letter-spacing:.3px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
-  .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,44,37,.05) 45%,rgba(58,44,37,.72))}
-  .ed-gallery .tile:nth-child(1){grid-column:span 2;grid-row:span 2}
-  .ed-gallery .tile:nth-child(6){grid-column:span 2}
-
-  /* === opinie wyciszone (bez wielkich gwiazd) === */
-  .reviews{background:var(--espresso);color:#f3e7db;text-align:center}
-  .reviews .stars{color:var(--gold);font-size:1rem;letter-spacing:3px;margin-bottom:14px;opacity:.7}
-  .reviews h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:14px;max-width:20ch;margin-inline:auto}
-  .reviews p{color:#cdbcae;max-width:40rem;margin:0 auto 28px}
-
-  /* === kontakt === */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
-  .info .row{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(192,145,95,.2)}
-  .info .row .ic{font-size:1.3rem;margin-top:2px}
-  .info .row a{font-weight:500}
-  .info .row a:hover{color:var(--gold-d)}
-  .map{min-height:340px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(192,145,95,.2)}
-  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.15) contrast(1.02)}
-  .contact-cta{margin-top:28px}
-  footer{background:#2c211c;color:#cdbcae;text-align:center;padding:34px 24px;font-size:.88rem}
-  footer .logo{font-size:1.2rem;color:#f3e7db;margin-bottom:8px}
-  footer a{color:var(--gold)}
-  .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  @media(max-width:880px){
-    .ed-hero-lead,.ed-about,.contact-grid{grid-template-columns:1fr;gap:24px}
-    .ed-hero-lead .hero-cta{justify-content:flex-start}
-    .ed-about-img{height:300px}
-    .ed-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
-    .ed-gallery .tile:nth-child(1){grid-column:span 2;grid-row:span 1}
-    .ed-gallery .tile:nth-child(6){grid-column:span 2}
-    .ed-offer .erow{grid-template-columns:auto 1fr;gap:14px 22px}
-    .ed-offer .desc{grid-column:1 / -1}
-    .nav-links{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:var(--cream);padding:24px;gap:18px;border-bottom:1px solid rgba(192,145,95,.2);display:none}
-    .nav-links.open{display:flex}
-    .burger{display:block}
-  }
-  @media(max-width:560px){.ed-gallery{grid-template-columns:1fr}.ed-gallery .tile:nth-child(1),.ed-gallery .tile:nth-child(6){grid-column:span 1}}
-  .callbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:center;gap:.55rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;font-weight:600;font-size:1.02rem;padding:15px;text-decoration:none;box-shadow:0 -10px 30px -12px rgba(0,0,0,.45)}
-  @media(max-width:880px){ .callbar{display:flex} body{padding-bottom:62px} }
-/* === CINEMATIC HERO === */
-.hero-cine{position:relative;height:100svh;min-height:580px;display:flex;align-items:flex-end;overflow:hidden}
-.hero-cine-bg{position:absolute;inset:0;background:url('img/hero.jpg') center/cover no-repeat;transform:scale(1.05);animation:cineZoom 16s var(--ease) forwards}
-.hero-cine::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,15,12,.55) 0%,rgba(18,15,12,.14) 16%,rgba(18,15,12,.30) 52%,rgba(18,15,12,.84) 100%)}
-.hero-cine-inner{position:relative;z-index:2;color:#fff;padding-bottom:clamp(56px,10vh,128px)}
-.hero-cine .eyebrow{color:#fff;opacity:.92}
-.hero-cine h1{color:#fff;font-size:clamp(2.8rem,8.5vw,7rem);line-height:.98;letter-spacing:-.03em;max-width:20ch;margin-bottom:30px;text-shadow:0 8px 50px rgba(0,0,0,.5)}
-.hero-cine h1 em{font-style:italic;color:var(--rose)}
-.hero-cine-scroll{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3;color:#fff;opacity:.85;font-size:1.5rem;text-decoration:none;animation:cineBob 1.9s ease-in-out infinite}
-@keyframes cineZoom{to{transform:scale(1)}}
-@keyframes cineBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
-body.cine header{position:fixed;top:0;left:0;right:0;background:transparent;border-bottom-color:transparent;transition:background .3s,border-color .3s}
-body.cine header .logo,body.cine header .nav-links a{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.6)}
-body.cine header .logo span{color:#f0d9a8;text-shadow:0 1px 14px rgba(0,0,0,.6)}
-body.cine header.scrolled{background:rgba(250,245,239,.92);border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:blur(12px)}
-body.cine header.scrolled .logo,body.cine header.scrolled .nav-links a{color:var(--espresso);text-shadow:none}
-body.cine header.scrolled .logo span{color:var(--gold-d);text-shadow:none}
-body.cine header.scrolled .logo span{color:var(--gold-d)}
-@media (prefers-reduced-motion:reduce){.hero-cine-bg,.hero-cine-scroll{animation:none}}
-
-/* === base premium === */
-/* BASE PREMIUM — wspólny system dla wszystkich branż (z _premium-web-craft.md).
-   Wstrzykiwany PO palecie skórki, PRZED overridem branżowym. Działa na realne klasy szablonu. */
-
-/* --- TOKENY: odstępy 4/8, fluid typografia clamp(), promienie, ruch, hairline, miękkie cienie --- */
-:root{
-  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
-  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
-  --text-sm:clamp(.82rem,.8rem + .1vw,.9rem);
-  --text-base:clamp(1rem,.97rem + .15vw,1.125rem);
-  --text-lg:clamp(1.15rem,1.1rem + .25vw,1.35rem);
-  --text-h3:clamp(1.2rem,1.1rem + .5vw,1.5rem);
-  --text-h2:clamp(2rem,1.6rem + 2vw,2.9rem);
-  --text-h1:clamp(2.8rem,2rem + 4vw,5rem);
-  --r-sm:6px; --r-md:10px; --r-lg:16px;
-  --ease:cubic-bezier(.25,.46,.45,.94); --dur:.22s;
-  --hairline:1px solid color-mix(in srgb, var(--espresso) 12%, transparent);
-  --sh-sm:0 1px 2px rgba(0,0,0,.04), 0 2px 6px rgba(0,0,0,.05);
-  --sh-md:0 2px 4px rgba(0,0,0,.05), 0 8px 20px -6px rgba(0,0,0,.10);
-  --sh-lg:0 4px 8px rgba(0,0,0,.06), 0 18px 44px -16px rgba(0,0,0,.18);
-}
-
-/* --- WHITESPACE: hojny, fluid oddech (najtańszy wzrost postrzeganej ceny) --- */
-section{padding-block:clamp(64px,10vw,128px)}
-.wrap{max-width:min(92%,1140px)}
-
-/* --- TYPOGRAFIA: redakcyjna hierarchia, dociśnięte nagłówki, mierzona długość wiersza --- */
-.head{max-width:46rem}
-.head h2{font-size:var(--text-h2);letter-spacing:-.025em;line-height:1.1}
-.head p{font-size:var(--text-base);line-height:1.6;max-width:60ch;margin-inline:auto}
-.hero h1{font-size:var(--text-h1);letter-spacing:-.03em;line-height:1.05}
-.hero p.lead{font-size:var(--text-lg);max-width:34ch;line-height:1.55}
-.about-txt p{max-width:65ch}
-.reviews p{max-width:60ch;margin-inline:auto}
-
-/* --- OBRAZY: warstwowy miękki cień + większy promień (overlaye z szablonu zostają) --- */
-.hero-art,.about-art{box-shadow:var(--sh-lg);border-radius:var(--r-lg)}
-.map{box-shadow:var(--sh-md);border:none;border-radius:var(--r-lg)}
-
-/* --- KARTY: bez pełnej ramki, miękki cień, hierarchia promieni, sensowny hover --- */
-.card{border:none;box-shadow:var(--sh-sm);border-radius:var(--r-md);
-      padding:var(--space-6) var(--space-5);
-      transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
-.card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:transparent}
-.card h3{margin-bottom:var(--space-2)}
-.card p{color:var(--muted);font-size:var(--text-base);line-height:1.6}
-.card .ic{color:var(--gold-d);font-weight:700;letter-spacing:.08em}
-
-/* --- GALERIA: miękki cień + spójny hover --- */
-.tile{border-radius:var(--r-md);box-shadow:var(--sh-sm);
-      transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
-.tile:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
-
-/* --- CIEMNE/KOLOROWE TŁA: biel z opacity zamiast szarości (kontrast WCAG) --- */
-.reviews p{color:#fff;opacity:.78}
-
-/* --- KONTAKT: emoji-ikony w kółku z tłem (powiększone emoji = tell AI), hairline separatory --- */
-.info .row{border-bottom:var(--hairline)}
-.info .row .ic{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:50%;
-      background:color-mix(in srgb,var(--gold) 16%,transparent);font-size:1.05rem;margin-top:0}
-
-/* --- PRZYCISKI: płynne przejścia + efekt „wciśnięcia" --- */
-.btn{transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
-.btn:active{transform:translateY(0);box-shadow:var(--sh-sm)}
-
-/* --- RUCH / a11y: szanuj prefers-reduced-motion --- */
-@media (prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;transition:none!important}
-  .reveal{opacity:1!important;transform:none!important}
-}
-
-/* === FELT-QUALITY (anty-AI, „czuje się drogo") — 2026-06-21 === */
-/* Film grain: ledwo widoczne ziarno na całości (różnica „wygląda" vs „czuje się" drogo). pointer-events:none = nie blokuje klików. */
-body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.035;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:180px 180px}
-/* Hierarchia przez przezroczystość (premium): eyebrow drugorzędny, nie krzyczy */
-.eyebrow{opacity:.88}
-/* Widoczny focus klawiatury (podłoga jakości a11y) */
-:focus-visible{outline:2px solid var(--gold-d);outline-offset:3px;border-radius:2px}
-/* Zaznaczanie tekstu w kolorze marki — drobny, „dopieszczony" detal */
-::selection{background:color-mix(in srgb,var(--gold) 26%,transparent)}
-
-/* === TIER 2 — STRUKTURA i RYTM (2026-06-21) === */
-/* Znacznik akcentu zamiast dekoracyjnych 01/02/03 (numeracja tylko gdy realna sekwencja → build.py "numbered") */
-.card .ic-mark{display:block;width:32px;height:3px;border-radius:2px;background:var(--gold);opacity:.92;margin-bottom:var(--space-4)}
-/* Rytm sekcji: galeria jako odrębny, jaśniejszy pas + cienkie linie między jasnymi sekcjami (koniec z „płaskim kremem") */
-#galeria{background:var(--cream-2)}
-#oferta,#galeria,#kontakt{border-top:var(--hairline)}
-/* Jedna „ozdobna" mikro-interakcja: podkreślenie linków nawigacji rosnące od lewej (reszta ruchu = reveal) */
-.nav-links a:not(.btn){position:relative}
-.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;
-  background:var(--gold-d);transform:scaleX(0);transform-origin:left;transition:transform var(--dur) var(--ease)}
-.nav-links a:not(.btn):hover::after{transform:scaleX(1)}
-/* Hover karty (profesjonalny): złoty pasek „przejeżdża" przez górę karty + tytuł się złoci */
-.card .ic-mark{transition:width var(--dur) var(--ease),opacity var(--dur) var(--ease)}
-.card:hover .ic-mark{width:100%;opacity:1}
-.card h3{transition:color var(--dur) var(--ease)}
-.card:hover h3{color:var(--gold-d)}
-
-/* === recipe overrides (trade) === */
-/* ===== TRADE — premium industrial override ===== */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap');
-
-body{font-family:'Hanken Grotesk',sans-serif;line-height:1.7}
-h1,h2,h3,.serif,.logo,.card .ic{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-weight:700}
-.about-art .q{font-family:'Barlow Condensed','Hanken Grotesk',sans-serif;font-weight:600;font-style:normal;letter-spacing:.01em}
-
-/* więcej oddechu + redakcyjny rytm */
-section{padding:114px 0}
-.head{margin:0 auto 64px}
-.head h2,.about-txt h2,.reviews h2{text-transform:uppercase;letter-spacing:.01em;line-height:1.04;font-size:clamp(2.2rem,4.6vw,3.4rem)}
-/* eyebrow: na ciemnym = amber, na jasnym = stal (gold-d nie przechodzi AA na kremie) */
-.eyebrow{letter-spacing:4px;font-weight:600;color:var(--espresso)}
-.hero .eyebrow,.reviews .eyebrow{color:var(--gold)}
-
-/* HERO — ciemna stal + biały tekst, cienki pasek napięcia na krawędzi */
-.hero{background:linear-gradient(155deg,var(--espresso) 0%,#0d161f 100%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-d));z-index:3}
-.hero-inner{padding:100px 0 112px}
-.hero h1{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;color:var(--white);letter-spacing:0;line-height:.98;font-size:clamp(3rem,7.4vw,5.6rem)}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p.lead{color:#aeb9c4;font-size:1.15rem}
-.hero-art{border-radius:10px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
-.hero-art::after{background:linear-gradient(180deg,rgba(13,22,31,.15),rgba(13,22,31,.5))}
-/* przycisk "Zadzwoń" na ciemnym hero — stal + hairline (espresso topił się w tle) */
-.hero .btn-dark{background:var(--espresso-2);color:#fff;border-color:rgba(255,255,255,.16)}
-.hero .btn-dark:hover{background:#2f4456;border-color:var(--gold)}
-
-/* PASEK ZAUFANIA — duże kondensowane liczby, układ poziomy (bez rozbijania na kolumnę) */
-.strip{background:#0d161f;color:#9fabb6;border-top:1px solid var(--espresso-2);border-bottom:1px solid var(--espresso-2)}
-.strip .wrap{gap:14px 48px;padding:28px 24px}
-.strip span{align-items:baseline;gap:.5rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.strip b{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:700;line-height:1;color:var(--gold)}
-
-/* nagłówki sekcji — pasek napięcia pod tytułem */
-.head h2::after{content:"";display:block;width:54px;height:3px;margin:18px auto 0;background:linear-gradient(90deg,var(--gold),var(--gold-d))}
-
-/* KARTY USŁUG — hairline na ciemnej stali, bez ciężkiego cienia */
-.card{background:var(--espresso-2);border:1px solid rgba(255,255,255,.07);border-radius:8px;box-shadow:none}
-.card:hover{transform:translateY(-4px);box-shadow:none;border-color:var(--gold)}
-.card .ic{color:var(--gold);font-size:1.7rem;letter-spacing:0}
-.card .ic::after{background:var(--gold);opacity:.8;height:2px}
-.card h3{color:var(--white);text-transform:uppercase;font-size:1.18rem;letter-spacing:.01em}
-.card p{color:#9fabb6}
-
-/* O NAS / KROKI / KONTAKT — jasna stal */
-.about{background:var(--cream-2)}
-.about-art{border-radius:8px}
-.about-txt p{color:var(--espresso)}
-
-/* GALERIA realizacji — full-bleed / gutterless, dowód roboty */
-.gallery{gap:2px}
-.tile{border-radius:0;box-shadow:none}
-.tile span{text-transform:uppercase;letter-spacing:.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem}
-.tile::after{background:linear-gradient(180deg,rgba(13,22,31,0) 40%,rgba(13,22,31,.82))}
-
-/* OPINIE na stali */
-.reviews{background:#0d161f}
-.reviews h2{text-transform:uppercase}
-.map{border-radius:8px}
-.map iframe{filter:grayscale(.4) contrast(1.05) brightness(.96)}
-
-@media(max-width:880px){
-  section{padding:78px 0}
-  .hero-inner{padding:64px 0 76px}
-  .gallery{grid-template-columns:repeat(2,1fr);gap:2px}
-  .strip .wrap{gap:14px 28px;justify-content:flex-start}
-  .strip b{font-size:1.9rem}
-}
-</style>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="cine">
-<header><div class="wrap"><nav>
-  <div class="logo">Zakład Blacharsko-Dekarski Maciej <span>Bagrowski</span></div>
-  <div class="nav-links" id="menu">
-    <a href="#oferta">Oferta</a><a href="#onas">O nas</a><a href="#galeria">Galeria</a><a href="#kontakt">Kontakt</a>
-    <a class="btn btn-gold" href="#kontakt">Zobacz realizacje</a>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="name">Zakład Blacharsko-Dekarski Maciej Bagrowski</span><span class="sub">Dekarstwo i blacharstwo od 1996</span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Strona główna</a>
+      <a href="realizacje.html">Realizacje</a>
+      <a href="oferta.html">Oferta</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="tel:+48604739593" class="btn btn-accent">Zadzwoń +48 604 739 593</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-  <button class="burger" id="burger" aria-label="Menu">☰</button>
-</nav></div></header>
+</header>
 
 <section class="hero-cine">
-  <div class="hero-cine-bg" role="img" aria-label="Zakład Blacharsko-Dekarski Maciej Bagrowski"></div>
-  <div class="hero-cine-inner wrap">
-    <span class="eyebrow">Dekarstwo i pokrycia dachowe - Wągrowiec</span>
-    <h1>Solidny dach, <em>który chroni na lata</em></h1>
-    <div class="hero-cta"><a class="btn btn-gold" href="#kontakt">Zobacz realizacje</a></div>
+  <img src="img/hero.jpg" alt="Zakład Blacharsko-Dekarski Maciej Bagrowski - Solidny dach, który chroni na lata">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Dekarstwo i pokrycia dachowe - Wągrowiec · od 1996</span>
+      <h1>Solidny dach, który chroni na lata</h1>
+      <p class="lead">Pokrycia dachowe, więźba, rynny i remonty dachów. Od pomiaru, przez dobór materiału, po szczelny montaż - wszystko w jednych rękach, z gwarancją i bez niespodzianek.</p>
+      <div class="hero-actions">
+        <a href="kontakt.html" class="btn btn-accent">Bezpłatna wycena <span class="arr">→</span></a>
+        <a href="tel:+48604739593" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)">Zadzwoń +48 604 739 593</a>
+      </div>
+      <div style="margin-top:var(--space-6);color:#fff;font-weight:600;letter-spacing:.02em;opacity:.92">★ Ocena 4,8 w Google · 14 opinii</div>
+    </div>
   </div>
-  <a class="hero-cine-scroll" href="#oferta" aria-label="Przewiń niżej">↓</a>
+</section>
+<section class="strip" style="padding-block:0">
+  <div class="wrap">
+    <div class="item reveal"><div class="k">Od 1996</div><div class="v">blisko 30 lat na dachach</div></div>
+    <div class="item reveal"><div class="k">4,8 / 5</div><div class="v">ocena w Google (14 opinii)</div></div>
+    <div class="item reveal"><div class="k">Orły Branży</div><div class="v">Budowlanej w Wągrowcu</div></div>
+    <div class="item reveal"><div class="k">Pomiar i wycena</div><div class="v">bezpłatnie, bez zobowiązań</div></div>
+  </div>
+</section>
+<section class="proces">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Jak pracujemy</span>
+      <h2>Wiesz, na czym stoisz - na każdym etapie</h2>
+      <p>Prosty, przewidywalny proces. Bez niespodzianek i bez naciągania.</p>
+    </div>
+    <ol class="proces-line">
+      <li class="reveal"><span class="pno">01</span><h3>Bezpłatna wycena</h3><p>Przyjeżdżamy, oglądamy, doradzamy. Bez opłat i bez zobowiązań.</p></li>
+      <li class="reveal"><span class="pno">02</span><h3>Kosztorys i termin</h3><p>Jasna cena i termin na piśmie - zanim cokolwiek ruszy.</p></li>
+      <li class="reveal"><span class="pno">03</span><h3>Realizacja</h3><p>Robimy zgodnie ze sztuką, na czas, dbając o porządek.</p></li>
+      <li class="reveal"><span class="pno">04</span><h3>Odbiór i gwarancja</h3><p>Sprzątamy po sobie i dajemy gwarancję na robociznę.</p></li>
+    </ol>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Co robimy</span>
+      <h2>Nasze usługi</h2>
+      <p>Każdy dach traktujemy indywidualnie - dobieramy pokrycie, konstrukcję i obróbki tak, by służył dziesięciolecia.</p>
+    </div>
+    <div class="gateways">
+      <a href="oferta.html" class="gateway reveal"><img src="img/g2.jpg" alt="Pokrycia dachowe"><span class="g-ttl">Pokrycia dachowe</span></a>
+      <a href="oferta.html" class="gateway reveal"><img src="img/g3.jpg" alt="Więźba dachowa"><span class="g-ttl">Więźba dachowa</span></a>
+      <a href="oferta.html" class="gateway reveal"><img src="img/g4.jpg" alt="Remonty i renowacje dachów"><span class="g-ttl">Remonty i renowacje dachów</span></a>
+    </div>
+    <div style="margin-top:var(--space-7)" class="reveal"><a href="oferta.html" class="btn btn-ghost">Pełna oferta <span class="arr">→</span></a></div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Realizacje</span>
+      <h2>Nasze realizacje</h2>
+      <p>Zobacz dachy, które kryliśmy - od blachodachówki i dachówki ceramicznej po remonty i obróbki na domach naszych klientów.</p>
+    </div>
+    <div class="gallery">
+      <div class="tile t-two3 reveal"><img src="img/g5.jpg" alt="Blachodachówka modułowa"><div class="cap">Blachodachówka modułowa<small>Nowe pokrycie z pełną obróbką kalenicy i kominów</small></div></div>
+      <div class="tile t-third reveal"><img src="img/g6.jpg" alt="Dachówka ceramiczna"><div class="cap">Dachówka ceramiczna<small>Klasyczne, trwałe pokrycie na dziesięciolecia</small></div></div>
+      <div class="tile t-third reveal"><img src="img/g7.jpg" alt="Więźba dachowa"><div class="cap">Więźba dachowa<small>Konstrukcja ciesielska pod każdy kształt dachu</small></div></div>
+      <div class="tile t-third reveal"><img src="img/g8.jpg" alt="Rynny i obróbki blacharskie"><div class="cap">Rynny i obróbki blacharskie<small>Odprowadzanie wody bez zacieków na elewacji</small></div></div>
+      <div class="tile t-third reveal"><img src="img/g9.jpg" alt="Remont dachu"><div class="cap">Remont dachu<small>Wymiana pokrycia i naprawa przecieków</small></div></div>
+    </div>
+    <div style="margin-top:var(--space-7)" class="reveal"><a href="realizacje.html" class="btn btn-accent">Pełna galeria <span class="arr">→</span></a></div>
+  </div>
+</section>
+<section class="obszar">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Obszar działania</span>
+      <h2>Dojeżdżamy do Ciebie</h2>
+    </div>
+    <ul class="obszar-list reveal"><li class="is-home">Wągrowiec</li><li>Wągrowiec</li><li>powiat wągrowiecki</li><li>Wielkopolska</li><li>+ okolice (do 30 km)</li></ul>
+  </div>
+</section>
+<section class="cta">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Współpraca</span>
+      <h2>Potrzebujesz fachowca? Wycenimy za darmo.</h2>
+      <p>Zadzwoń lub napisz - przyjedziemy, obejrzymy i podamy jasną cenę. Bez zobowiązań.</p>
+    </div>
+    <div class="cta-actions reveal">
+      <a href="kontakt.html" class="btn btn-light">Bezpłatna wycena <span class="arr">→</span></a>
+      <a href="tel:+48604739593" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)">+48 604 739 593</a>
+    </div>
+  </div>
 </section>
 
-<div class="strip"><div class="wrap">
-  <span>✦ <b>Gwarancja</b>&nbsp;na pokrycie i wykonanie</span>
-  <span>✦ <b>Materiały</b>&nbsp;sprawdzonych marek</span>
-  <span>✦ <b>Bezpłatny</b>&nbsp;pomiar i wycena</span>
-  <span>✦ <b>Po sobie</b>&nbsp;zostawiamy porządek</span>
-</div></div>
-
-<section id="oferta"><div class="wrap">
-  <div class="head reveal" style="text-align:left;max-width:46rem;margin:0 0 40px"><span class="eyebrow">Co robimy</span><h2>Nasze usługi</h2><p style="margin-inline:0">Każdy dach traktujemy indywidualnie - dobieramy pokrycie, konstrukcję i obróbki tak, by służył dziesięciolecia.</p></div>
-  <div class="ed-offer">
-    <div class="erow reveal"><div class="num">01</div><div class="ttl">Pokrycia dachowe</div><div class="desc">Blachodachówka, dachówka ceramiczna i betonowa, blacha na rąbek - dobieramy pokrycie do bryły Twojego dachu.</div></div>
-    <div class="erow reveal"><div class="num">02</div><div class="ttl">Więźba dachowa</div><div class="desc">Konstrukcje dachowe od podstaw - solidna ciesielka pod każdy kształt i spadek dachu.</div></div>
-    <div class="erow reveal"><div class="num">03</div><div class="ttl">Remonty i renowacje dachów</div><div class="desc">Wymiana pokrycia, naprawa przecieków, docieplenie - przywracamy dach do pełnej sprawności.</div></div>
-    <div class="erow reveal"><div class="num">04</div><div class="ttl">Rynny i obróbki blacharskie</div><div class="desc">Systemy rynnowe i obróbki, które odprowadzają wodę tam, gdzie trzeba - bez zacieków na elewacji.</div></div>
-    <div class="erow reveal"><div class="num">05</div><div class="ttl">Okna dachowe i podbitki</div><div class="desc">Montaż okien dachowych, podbitki i wykończenia, które domykają dach estetycznie i szczelnie.</div></div>
-    <div class="erow reveal"><div class="num">06</div><div class="ttl">Papa i dachy płaskie</div><div class="desc">Pokrycia papowe i membrany na dachy płaskie, tarasy i garaże - szczelnie i na lata.</div></div>
-  </div>
-  <p class="price-note">Wycena i terminy ustalane indywidualnie: <a href="#kontakt" style="color:var(--gold-d);font-weight:500">Zobacz realizacje →</a></p>
-</div></section>
-
-
-
-<section class="about" id="onas"><div class="wrap ed-about">
-  <div class="ed-about-txt reveal">
-    <span class="eyebrow">O nas</span><h2>Dach to nie miejsce na oszczędności</h2>
-    <p>Zakład Blacharsko-Dekarski Maciej Bagrowski to dekarze, dla których dach znaczy więcej niż samo pokrycie - to ochrona całego domu na dekady. Pracujemy solidnie, na sprawdzonych materiałach i z dbałością o każdy detal: kalenicę, kosz, obróbkę komina.</p><p>Doradzimy pokrycie dopasowane do bryły domu i budżetu, podamy jasną wycenę i dotrzymamy terminu. Po pracy zostawiamy porządek, a Ty dostajesz dach, o którym możesz zapomnieć na długie lata.</p>
-    <a class="btn btn-dark" href="#kontakt" style="margin-top:8px">Odwiedź nas</a>
-  </div>
-  <div class="ed-about-img reveal" role="img" aria-label="Zakład Blacharsko-Dekarski Maciej Bagrowski"></div>
-</div></section>
-
-<section id="galeria"><div class="wrap">
-  <div class="head reveal"><span class="eyebrow">Galeria</span><h2>Nasze realizacje</h2><p>Zobacz dachy, które kryliśmy - od blachodachówki i dachówki ceramicznej po remonty i obróbki na domach naszych klientów.</p></div>
-  <div class="ed-gallery">
-    <div class="tile reveal" style="background-image:url('img/g1.jpg')"><span>Dach z blachodachówki</span></div>
-    <div class="tile reveal" style="background-image:url('img/g2.jpg')"><span>Dachówka ceramiczna</span></div>
-    <div class="tile reveal" style="background-image:url('img/g3.jpg')"><span>Więźba dachowa</span></div>
-    <div class="tile reveal" style="background-image:url('img/g4.jpg')"><span>Rynny i obróbki</span></div>
-    <div class="tile reveal" style="background-image:url('img/g5.jpg')"><span>Remont dachu</span></div>
-    <div class="tile reveal" style="background-image:url('img/g6.jpg')"><span>Okno dachowe</span></div>
-  </div>
-</div></section>
-
-<section class="reviews ed"><div class="wrap reveal">
-  <div class="stars">★ ★ ★ ★ ★</div><div class="rating-line" style="text-align:center;margin:.5rem auto 0;font-weight:600;letter-spacing:.02em;opacity:.9">Ocena 4,8 · 14 opinii w Google</div><h2>Zaufali nam właściciele domów</h2><p>Klienci, którzy zlecili nam dach, doceniają solidne pokrycie i to, że dopinamy montaż na czas i szczelnie.</p>
-  <a class="btn btn-gold" href="#kontakt">Bezpłatny pomiar i wycena</a>
-</div></section>
-
-<section id="kontakt" class="about"><div class="wrap">
-  <div class="head reveal"><span class="eyebrow">Zapraszamy</span><h2>Kontakt i rezerwacja</h2></div>
-  <div class="contact-grid">
-    <div class="info reveal">
-      <div class="row"><span class="ic">📍</span><div><b>Adres</b><p>Leśna 22, 62-100 Wągrowiec</p></div></div>
-      <div class="row"><span class="ic">📞</span><div><b>Telefon</b><p><a href="tel:+48604739593">+48 604 739 593</a></p></div></div>
-      <div class="row"><span class="ic">🗓️</span><div><b>Rezerwacja</b><p>Bezpłatny pomiar i wycena</p></div></div>
-      <div class="row"><span class="ic">⏰</span><div><b>Godziny</b><p>Zapraszamy - zadzwoń po szczegóły</p></div></div>
-      <div class="contact-cta"><a class="btn btn-gold" href="#kontakt">Zobacz realizacje</a></div>
-    </div>
-    <div class="map reveal"><iframe src="https://maps.google.com/maps?q=52.8111635%2C17.1773745&z=15&output=embed" loading="lazy" title="Mapa - Zakład Blacharsko-Dekarski Maciej Bagrowski"></iframe></div>
-  </div>
-</div></section>
-
-<a class="callbar" href="tel:+48604739593">📞 Zadzwoń: +48 604 739 593</a>
-
 <footer>
-  <div class="logo">Zakład Blacharsko-Dekarski Maciej <span style="color:var(--gold)">Bagrowski</span></div>
-  <p>Leśna 22, 62-100 Wągrowiec · +48 604 739 593</p>
-  <p style="margin-top:6px;opacity:.7">© 2026 Zakład Blacharsko-Dekarski Maciej Bagrowski &nbsp;·&nbsp; Projekt strony: Krzysztof Brzeziński</p>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Zakład Blacharsko-Dekarski Maciej Bagrowski</div>
+        <p>Pokrycia dachowe, więźba, rynny i remonty dachów. Od pomiaru, przez dobór materiału, po szczelny montaż - wszystko w jednych rękach, z gwarancją i bez…</p>
+      </div>
+      <div class="foot-col">
+        <h4>Nawigacja</h4>
+        <a href="index.html">Strona główna</a>
+        <a href="realizacje.html">Realizacje</a>
+        <a href="oferta.html">Oferta</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+48604739593">+48 604 739 593</a>
+        <a href="mailto:bagrus222@poczta.fm">bagrus222@poczta.fm</a>
+        <p>Leśna 22, 62-100 Wągrowiec</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Zakład Blacharsko-Dekarski Maciej Bagrowski</span>
+      <span>Projekt strony: Krzysztof Brzeziński</span>
+    </div>
+  </div>
 </footer>
+<div class="sticky-call"><a class="sc-call" href="tel:+48604739593">📞 Zadzwoń</a><a class="sc-quote" href="kontakt.html">Bezpłatna wycena</a></div>
 
-<script>
-  var b=document.getElementById('burger'),m=document.getElementById('menu');
-  if(b&&m){b.addEventListener('click',function(){m.classList.toggle('open')});
-    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});}
-  function _rv(el){el.classList.add('in')}
-  var _els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){_rv(e.target);io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -8% 0px'});
-    _els.forEach(function(el){io.observe(el)});
-    setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(_rv)},2000); /* bezpiecznik: gwarancja widoczności */
-  } else { _els.forEach(_rv); }
-</script>
-<script>(function(){var h=document.querySelector("header");function s(){if(h)h.classList.toggle("scrolled",scrollY>60)}s();addEventListener("scroll",s,{passive:true})})();</script>
+<script src="assets/main.js"></script>
 </body>
 </html>
